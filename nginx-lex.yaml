@@ -1,3 +1,4 @@
+#this cloudify blueprint is for ubuntu 14.04
 tosca_definitions_version: cloudify_dsl_1_2
 
 imports:
@@ -25,8 +26,6 @@ inputs:
     type: string
     default: 'ubuntu'
 
-
-
 node_templates:
 
   dns_vm_ip:
@@ -39,6 +38,9 @@ node_templates:
       security_group:
         description: Security group for DNS service with ssh
       rules:
+        - port: 80
+          remote_ip_prefix: 0.0.0.0/0
+          protocol: tcp
         - port: 22
           remote_ip_prefix: 0.0.0.0/0
           protocol: tcp

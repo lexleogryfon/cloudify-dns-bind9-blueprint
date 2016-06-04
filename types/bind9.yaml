@@ -54,7 +54,7 @@ node_types:
     derived_from: cloudify.nodes.ApplicationServer
     interfaces:
       cloudify.interfaces.lifecycle:
-        create: scripts/bind9/install.sh
-        start: scripts/bind9/start.sh
-        stop: scripts/bind9/stop.sh
+        create: scripts/nginx/install.sh
+        start: scripts/nginx/start.sh
+        stop: scripts/nginx/stop.sh
 
